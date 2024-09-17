@@ -137,3 +137,75 @@ let ifUserReady = confirm('Ты готов?')
     console.log('Жаль((')
  }
 
+ const yourAge = +prompt("Сколько тебе лет сейчас?") //с помощью унарного оператора + ответ преобразуется в числовое значение
+//switch case -- альтернатива if else, последовательно проверяет кейсы
+ switch (yourAge) {
+    case 0: {
+        console.log('Не бывает такого возраста')
+        break
+    }
+    case 18: {
+        console.log('Не верю, покажи паспорт')
+        break
+    }
+    case 1000: {
+        console.log('Ты вампир, что ли?')
+        break
+    }
+}
+//если хотим проверить какой-то диапазон, а не конкретное число, то добавляем true
+switch (true) {
+    case yourAge >= 18: {
+        console.log('Супер!')
+        break
+    }    
+    case yourAge < 18: {
+        console.log('Дрступ запрещен')
+        break
+    }
+}
+//ЦИКЛЫ, цикл while -- пока истинно делай
+let count1 = 0
+while (count1 < 10) {
+    console.log(count1)
+    count1++
+}
+
+//цикл do while -- делай пока истинно
+let count2 = 100
+do {
+    console.log(count2)
+    count2++
+} while (count2 < 10)
+
+//цикл for
+for (let i=0; i < 4; i++) {
+    alert(i)
+}
+
+//создание собственных функций, function declaration
+function logHello() {
+    console.log('Привет')
+    console.log('Пока')
+}
+logHello()
+// return -- возврат значения из функции
+function sum(a,b) {
+    return a + b
+}
+const resultSum = sum(100, 1)
+console.log(resultSum)
+
+function getAgeType(age) {
+    if (typeof age !== 'number') {
+        return 'Возраст указан некорректно'
+    }
+    if (age < 0 || age > 110) {
+        return 'Такого возраста не может быть'
+    }
+    if (age <18) {
+        return 'Несовершеннолетний'
+    }
+    return 'Взрослый'
+}
+console.log(getAgeType(555))
