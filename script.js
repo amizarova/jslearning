@@ -209,3 +209,32 @@ function getAgeType(age) {
     return 'Взрослый'
 }
 console.log(getAgeType(555))
+
+//область видимости переменных -- то что в находится в фигурных скобках видит все что находится снаружи
+//к сущностям которые находятся в локальной обл видимости нельзя обратиться снаружи
+
+//функция при вызове может принимать данные которые потом будут использоваться в теле функции()
+function logMessage(message, count) {
+    for (let i = 0; i < count; i++) {
+        console.log(message)
+    }
+}
+logMessage('Привет', 3)
+
+//данные которые мы пишем в () в функции -- локальные переменные которые мы неявно обявили в момент вызова функции
+// можно писать в формате function A(message = 'meow', count = 1)
+//function declaration можно перезаписать
+
+//function expression, если такая функция записана через const ее нельзя переопределить, через let можно
+const longHello = function() {
+    console.log('ПРИВЕЕЕТ')
+}
+longHello()
+// стрелочные функции, arrow function
+const loggHello = () => {
+    console.log('Hello')
+}
+loggHello()
+//особенность стрелочной функции -- неявный возврат
+const summ = (a,b) => a + b
+console.log(sum(1,2))
