@@ -240,6 +240,7 @@ const summ = (a,b) => a + b
 console.log(sum(1,2))
 
  //объекты -- набор свойств, пара ключ-значение; ссылочный тип данных
+ //объекты некоторые содержат в себе функциюб такие функции называются методами
  const firstEmtyObject = {}
  const secondEmptyObject = new Object()
 
@@ -343,6 +344,42 @@ const calculator = {
 calculator.read()
 console.log('Сумма =', calculator.sum())
 console.log('Произведение =', calculator.mul())
+
+//методы примитивов и чисел
+//toFixed -- округляет число до указанного количества знаков после запятой
+const price = 99.99
+const roundedPrice = price.toFixed(0)
+console.log('Округленная цена:', roundedPrice)
+console.log(99.99.toFixed(2))
+console.log(100..toFixed(2))
+//toPrecision -- округляет максимальноб не оставляет знаков
+const num1 = 100.055
+console.log(num1.toPrecision(4))
+//toString -- приводит к строчному типу
+const num2 = 100
+const numAsString = num.toString()
+console.log('Число:', num)
+console.log('Число в виде строки:', numAsString)
+ //Math -- встроенный объект JS
+ console.log(Math)
+ console.log('Случайное число:', Math.random()) //всегда дробное 
+ console.log(Math.pow(2,10)) //приведение в степень
+ console.log(Math.sqrt(16)) //квадратный корень
+ console.log(Math.cbrt(9)) //кубический корень
+ console.log(Math.round(3.55))//округляет до ближайшего целого
+ console.log(Math.floor(5.66))// округляет вниз до ближайшего целого
+ console.log(Math.ceil(7.88))//округляет вверх до ближайшего целого
+ console.log(Math.trunc(3.49))//округляет до ближайшего целого положительного
+
+ //парсинг, parseInt
+ const numberAsString1 = '100px'
+ console.log(parseInt(numberAsString1))
+ //parseFloat
+ const numberAsString2 = '100.50px'
+ console.log(parseFloat(numberAsString2))
+ 
+
+ 
 
 
 
