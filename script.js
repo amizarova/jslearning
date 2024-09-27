@@ -238,3 +238,119 @@ loggHello()
 //особенность стрелочной функции -- неявный возврат
 const summ = (a,b) => a + b
 console.log(sum(1,2))
+
+ //объекты -- набор свойств, пара ключ-значение; ссылочный тип данных
+ const firstEmtyObject = {}
+ const secondEmptyObject = new Object()
+
+ const user = {
+    login: 'iamsuperhero',
+    password: 'qwerty',
+    'registration date' : '01.01.2024',
+    sayHi: () => console.log('Привет!!!')
+ }
+ console.log(user.login)
+ console.log(user['registration date'])
+ user.sayHi()
+
+ const user1 = {}
+ user1.name = 'Амелия'
+ user1['is student'] = true
+ console.log(user1)
+ user1.name = 'Ами'
+ console.log(user1)
+ delete user1.name
+ delete user1['is student']
+
+ const name2 = 'Amelie'
+ const age2 = 20
+ const user2 = {
+    name2,
+    age2,
+ }
+ console.log(user2)
+ console.log('is developer' in user2)
+ console.log(user.isDeveloper !== undefined)
+ for (const key in user2) {
+    console.log(key)
+    console.log(user[key])
+ }
+
+ const propName = prompt('Свойство с каким именем добавить в объект?')
+ const propValue = prompt(`Какое значение записать в свойство ${propName}`)
+ const obj = {
+    [propName]: propValue,
+ }
+console.log(obj)
+
+const nums = {
+    2: 'Второй',
+    1: 'Первый',
+    3: 'Третий'
+}
+for (const num in nums) {
+    console.log(nums[num])
+}
+
+//ключевое слово this -- позволяет получить доступ к контексту выполнения
+console.log('this глобальный:', this)
+function fn() {
+    console.log('this в теле функции:', this)
+}
+fn()
+
+const user3 = {
+    name3: 'Amelie',
+    age3: 20,
+    logThis: function() {
+        console.log('this в теле метода объекта user:', this)
+    } ,
+    address: {
+        city: 'Krakow',
+        zipcode: 12345678,
+        logInnerThis: function () {
+            console.log('this в теле метода объекта adress:', this)
+        } ,
+    }
+}
+user.logThis()
+user.address.logInnerThis()
+
+const admin1 = {name: 'Vlad'}
+const admin2 = {name: 'Vasya'}
+function logInfo () {
+    console.log('this:', this)
+    console.log('this name', this.name)
+}
+logInfo()
+admin1.logName = logInfo
+admin2.logName = logInfo
+admin1.logName()
+admin2.logName()
+
+const calculator = {
+    read() {
+        this.a = Number(prompt('Введите первое число:', 0))
+        this.b = Number(prompt('Введите второе число:', 0))
+    },
+    sum() {
+        return this.a + this.b
+    },
+    mul() {
+        return this.a * this.b
+    },
+}
+calculator.read()
+console.log('Сумма =', calculator.sum())
+console.log('Произведение =', calculator.mul())
+
+
+
+
+
+
+
+
+
+
+
