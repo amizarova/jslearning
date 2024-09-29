@@ -70,5 +70,46 @@ function num4(param4) {
 
 }
 console.log(`Первое четное число возведенное в третью степень: ${num4(numbers4)}`)
+console.log(`Первое четное число возведенное в третью степень: ${num4(numbers4)}`)
 
+//на вход дан массив чисел необходимо найти максимальное и минимальное значение и вернуть массив 
 
+const numbers5 = [8, 6, 7, -9, 5, 4, -1, 8, 12, 15]
+
+function num5(arr) {
+  let min = 0
+  let max = 0
+  let array = []
+
+    for(let i = 0; arr.length > i; i += 1 ) {
+        if (arr[i] < min) {
+          min = arr[i]
+        }
+        if (arr[i] > max) {
+          max = arr[i]
+        }
+        
+    }
+    array.push(min, max)
+    return array
+
+}
+console.log(`Массив с минимальным и максимальным значением: ${num5(numbers5)}`)
+
+//На вход подается пустой массив 
+//Нужно реализовать функцию, которая примет этот массив 1 аргументом, 2 
+//аргументом примет range в массиве от и до, необходимо изменить и вернуть массив, наполненный числами в указаном промежутке
+
+let emptyArr = []
+const range = [1, 8]
+
+function fillNumbers(array, arange) {
+  const min = arange[0]
+  const max = arange[1]
+  for(let i = min; max >= i; i += 1) {
+    
+    array.push(i)
+  }
+  return array
+}
+console.log(`Ответ: ${fillNumbers(emptyArr, range)}`)
