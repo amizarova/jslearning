@@ -113,3 +113,16 @@ function fillNumbers(array, arange) {
   return array
 }
 console.log(`Ответ: ${fillNumbers(emptyArr, range)}`)
+
+ //Реализиовать функцию, которая принимает на вход один аргумент - число
+//Необходимо вернуть массив чисел, от этого числа до 0
+
+const number = 12
+function counting(number) {
+  const array = []
+  for(let i = number; i >= 0 ; i -= 1) {
+    array.push(i)
+  }
+  return array
+}
+console.log(`Ответ: ${counting(number)}`)
