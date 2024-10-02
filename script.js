@@ -377,7 +377,60 @@ console.log('Число в виде строки:', numAsString)
  //parseFloat
  const numberAsString2 = '100.50px'
  console.log(parseFloat(numberAsString2))
- 
+
+
+ //Строки в JS и их методы, 14 урок ЭТИ МЕТОДЫ НЕ МУТИРУЮТ ИСХОДНУЮ СТРОКУ, НЕ МЕНЯЮТ ЕЕ
+ let byebye = 'Goodbye'
+ let lengthByebye = byebye.length //length -- свойство, а не метод, позволяет получить длину строки
+
+ //получение конкретного символа в строке по индексу
+ console.log(byebye[0])
+ console.log(byebye[byebye.length - 1])
+ console.log(byebye.at(0))
+ console.log(byebye.at(-1))
+
+ //приведение в нижний и в верхний регистр
+ let boring = 'КаКОЙтО тЕКСТ'
+ console.log(boring.toLowerCase())
+ console.log(boring.toUpperCase())
+
+ //избавление от пробелов в начале и в конце строки, пробелы между словами вырезаться не будут
+ let blank = '      Hello         '
+ console.log(blank.length)
+ console.log(blank.trim())
+
+//поиск в строке по индексу
+console.log(blank.indexOf('H'))
+console.log(blank.indexOf('hfhfjfkgkgkg')) //получим -1 в консоли потому что такой строки/символа нет
+
+//поиск в строке -- includes
+let stroka = 'Привет, меня зовут Амелия'
+console.log(stroka.includes('Амелия')) //вернет true
+
+//получение подстроки из строки
+console.log(stroka.substring(0,6))
+
+//ПОВТОРЕНИЕ СТРОКИ УКАЗАННОЕ КОЛИЧЕСТВО РАЗ
+let snovaStroka = 'Amelia'
+console.log(snovaStroka.repeat(3)) //'AmeliaAmelia'
+
+//замена части строки
+console.log(snovaStroka.replace('Amelia', 'Maria'))//меняем Amelia на Maria
+
+let iSnovaStroka = 'Я хочу поменять не одну часть строки, а каждую часть'
+console.log(iSnovaStroka.replaceAll('часть', 'блаблабла')) // меняет все вхождения
+console.log(iSnovaStroka.replace(/часть/g, 'блаблабла'))
+
+//разбивание строки на массив(по указанному разделителю)
+console.log(iSnovaStroka.split(',')) //запятая как разделитель
+console.log(iSnovaStroka.split('')) // посимвольно
+console.log(iSnovaStroka.split(' ')) //по пробелу
+
+
+
+
+
+
 
  
 
