@@ -488,6 +488,95 @@ const areArraysEqual = (arr1, arr2) => {
 }
 console.log(areArraysEqual(arr1, arr2))
 
+//Методы массивов, 16 урок
+
+//деструктуризация массивов
+const dataArray = ['Ameliya', 20]
+const [myName, myAge] = dataArray //обьявили переменные и присвоили значение из массива
+
+//перебор массива -- метод forEach
+const arrayPerebor = [1, 2, 3, 4, 5, 6, 7]
+arrayPerebor.forEach(function (element, index, array) {
+console.log(element)
+}) 
+
+//поиск индекса элемента в массиве
+const prices = [100, 200, 444, 500, 444, 777]
+console.log(prices.indexOf(444)) //поиск с начала массива
+console.log(prices.lastIndexOf(444)) //поиск с конца массива
+
+//проверка наличия элемента в массиве
+console.log(prices.includes(500))
+
+//поиск индекса сложного элемента в массиве
+const users = [
+    {
+        name: 'Амелия',
+        age: 20,
+        city: 'Москва',
+    },
+    {
+        name: 'Василий',
+        age: 40,
+        city: 'Краков',
+    },
+    {
+        name: 'Сергей',
+        age: 13,
+        city: 'Екатеринбург',
+    },
+]
+console.log(users.findIndex((user) => {
+    if (user.name === 'Василий') {
+        return true
+    }
+})
+)
+
+//проверка наличия сложного элемента в массиве
+console.log(
+    users.some((user) => user.name === 'Василий')
+)
+
+//проверка на соответствие всех элементов массива определенному условию
+console.log(
+    users.every((user => user.age >= 18))
+)
+
+//поиск элемента в массиве
+console.log(
+    users.find((user) => user.name === 'Василий')
+)
+
+//фильтрация массива -- метод filter
+console.log(
+    users.filter((user) => user.name === 'Василий')
+)
+
+//преобразование массива -- метод map
+const usersFormatted = users,map((user) => {
+    return `${user.name}, ${user.age} лет, живет в г. ${user.city}`
+})
+console.log(usersFormatted)
+
+//перебор массива с накоплением -- метод reduce
+const ageSum = users.reduce((sum, {age}) => {
+    return sum + element.age
+}, 0)
+
+//переворачивание массива -- reverse !!!!мутирует исходную сущность массива
+const reversedusers = users.reverse()
+console.log('Перевернутый массив users:', reversedusers)
+
+//сортировка массива -- метод sort
+const names = ['Вася', 'Катя', 'Маша']
+const sortedNames = names.sort()
+console.log(sortedNames) //выведет в алфавитном порядке, все воспринимает как строку
+
+
+
+
+
 
 
 
