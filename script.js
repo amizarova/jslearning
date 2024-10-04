@@ -554,7 +554,7 @@ console.log(
 )
 
 //преобразование массива -- метод map
-const usersFormatted = users,map((user) => {
+const usersFormatted = users.map((user) => {
     return `${user.name}, ${user.age} лет, живет в г. ${user.city}`
 })
 console.log(usersFormatted)
@@ -571,7 +571,58 @@ console.log('Перевернутый массив users:', reversedusers)
 //сортировка массива -- метод sort
 const names = ['Вася', 'Катя', 'Маша']
 const sortedNames = names.sort()
-console.log(sortedNames) //выведет в алфавитном порядке, все воспринимает как строку
+console.log(sortedNames) //выведет в алфавитном порядке, все воспринимает как строку 
+
+//Перебор обьекта, коллекции Map и Set -- 17 урок
+const meUser = {
+    name: 'Amelia',
+    age: 20,
+    city: 'Krakow',
+}
+for(const key in user) {
+    console.log('Имя свойства:', key)
+    console.log('Значение свойства', user[key])
+}
+
+const userKeys = Object.keys(meUser)
+console.log('userKeys:', userKeys) //получение массива ключей обьекта
+
+const userValues = Object.values(meUser)
+console.log('userValues:', userValues) //получение массива значений обьекта
+
+//перебор пар массива ключ-значение
+const userEntries = Object.entries(meUser)
+console.log('userEntries:', userEntries)
+
+//коллекция MAP
+const dataMap = new Map()
+dataMap.set(1, 'Число') 
+dataMap.set('1', 'Строка') //добавление пары ключ-значение в обьект
+
+console.log(dataMap.get(1))
+console.log(data.get('1')) //получение данных из обьекта
+
+console.log(data.has('name')) //проверка на существование элемента в map-коллекции
+
+//удаление ключа из map-коллекции -- метод delete
+dataMap.delete('1') 
+
+dataMap.clear() //полное очищение коллекции
+
+console.log(dataMap.size) //свойство позволяющее узнать количество элементов в коллекции(количество пар ключ-значение)
+
+//КОЛЛЕКЦИЯ ОТ ОБЬЕКТА ОТЛИЧАЕТСЯ ТЕМ ЧТО ОБЬЕКТ НЕ МОЖЕТ ХРАНИТЬ СВОЙСТВА С КЛЮЧАМИ НЕ В ВИДЕ СТРОКИ
+
+//коллекция SET
+const set = new Set(1, 2, 2, 2, 3) //такая коллекция может быть только в единственном экземпляре
+console.log(set) //выведет 1, 2, 3 -- Js уникализирует, избавляется от дублей
+
+set.add('4') //добавление значений в коллекцию set, только уникальные значения, все дубликаты игнорирует
+// delete, has, clear, size -- в set идентичны map
+
+// 18 урок -- JSON в JavaScript
+
+
 
 
 
