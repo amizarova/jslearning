@@ -644,6 +644,93 @@ const parsedUserData = JSON.parse(userDataString)
 console.log(parsedUserData) //преобразование строки обратно в обьект
 
 //19 урок -- классы в JS
+class Student {
+    planet = 'Земля'
+    country = 'Россия'
+    constructor(name, age) {
+        this.name = name
+        this.age = age
+    }
+    logAge() {
+        console.log(this.age)
+    }
+    set street(value) {
+        const firstLetter = value[0].toUpperCase()
+        const fromSecondLetter = value.slice(1).toLowerCase()
+
+        this._street = `${firstLetter}${fromSecondLetter}`
+    }
+    get street() {
+        return `ул. ${this._street}`
+    }
+    #someSecretAction() {
+
+    } //приватные методы, к ним нельзя обратиться извне
+    //static перед свойством дает возможнрсть обращения через точку
+}
+const firstStudent = new Student('Вася', 18)
+const secondStudent = new Student('Петя', 25)
+
+console.log('Имя первого студента:', firstStudent.name)
+console.log('Имя второго студента:', secondStudent.name)
+
+firstStudent.logAge()
+secondStudent.logAge()
+
+//геттеры и сеттеры -- нужны для добавления кастомной логики
+firstStudent.city = 'Москва' //под капотом сработал сеттер
+console.log(firstStudent.city) //под капотом сработал геттер
+firstStudent.street = 'Пушкина'
+
+//наследование классов
+class Person {
+    constructor(name, age) {
+        this.name = name
+        this.age = age
+    }
+    eat() { console.log('Ем...') }
+    sleep() { console.log('Сплю...')}
+}
+
+const examplePerson = new Person('Василий', 30)
+console.log('Name:', examplePerson.name)
+console.log('Age:', examplePerson.age)
+examplePerson.eat()
+examplePerson.sleep()
+
+class Developer extends Person {
+    writeCode() { console.log('Пишу код...') }
+    sleep() {
+        console.log('Не хочу спать')
+        this.writeCode() //можно переопределить то что было унаследовано от родительского класса
+    }
+}
+const exampleDeveloper = new Developer()
+exampleDeveloper.writeCode()
+exampleDeveloper.eat()
+exampleDeveloper.sleep()
+
+class JSDeveloper extends Developer {
+    makeFrontend() { console.log('Пишу фронтенд')}
+    eat() {
+        super.eat() //ключевое слово super позволяет переиспользовать родительский код
+        console.log('И смотрю ютуб')
+    }
+}
+const JSdeveloperExample = new JSDeveloper('Alexander', 27)
+JSdeveloperExample.makeFrontend()
+JSdeveloperExample.eat()
+
+//constructor родительского класса можно переопределить так же с помошью super
+
+
+
+
+
+
+
+
+
 
 
 
