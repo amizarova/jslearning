@@ -723,6 +723,22 @@ JSdeveloperExample.eat()
 
 //constructor родительского класса можно переопределить так же с помошью super
 
+//20 урок -- отложенное и регулярное выполнение кода -- setTimeout, setInterval, clearTimeout
+const timerID = setTimeout(() => {
+    alert('Это уведомление отобразится спустя 2 секунды после загрузки страницы')
+}, 2000) //функция таймер, принимает два аргумента, функцию и время в милисекундах 
+
+clearTimeout(timerID) //отмена таймера, необходим id таймера
+
+const intervalID = setInterval(() => {
+    console.log('Привет, я появляюсь каждые три секунды')
+}, 3000)
+
+clearInterval(intervalID) //отмена интервала, необходим айди
+
+
+
+
 
 
 
