@@ -620,7 +620,31 @@ console.log(set) //выведет 1, 2, 3 -- Js уникализирует, из
 set.add('4') //добавление значений в коллекцию set, только уникальные значения, все дубликаты игнорирует
 // delete, has, clear, size -- в set идентичны map
 
-// 18 урок -- JSON в JavaScript
+// 18 урок -- JSON в JavaScript(JavaScript Object Notation)
+//стандартизированный формат данных в виде js-обьекта
+
+//никаких undefined и функций в json-обьекте храниться не может
+//все оборачивается исключительно в ДВОЙНЫЕ КАВЫЧКИ, никаких висящих запятых
+ const userJson = {
+    "name": "Amelia",
+    "age": 20,
+    "city": "Krakow",
+    "address": {
+        "street": "ул. Пушкина",
+        "zipcode": 12345
+    },
+    "todos": ["sleep", "eat", "work"],
+    "hasCat": false,
+    "yacht": null
+}
+
+const userDataString = JSON.stringify(user)
+console.log(userDataString) //преобразование обьекта в строку
+const parsedUserData = JSON.parse(userDataString)
+console.log(parsedUserData) //преобразование строки обратно в обьект
+
+//19 урок -- классы в JS
+
 
 
 
