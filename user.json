@@ -1,0 +1,13 @@
+{
+    "name": "Amelia",
+    "age": 20,
+    "city": "Krakow",
+    "address": {
+        "street": "ул. Пушкина",
+        "zipcode": 12345
+    },
+    "todos": ["sleep", "eat", "work"],
+    "hasCat": false,
+    "yacht": null
+}
+
