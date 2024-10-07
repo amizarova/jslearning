@@ -736,8 +736,48 @@ const intervalID = setInterval(() => {
 
 clearInterval(intervalID) //отмена интервала, необходим айди
 
+//21 урок -- обработка ошибок, ty catch finally, throw, error
+//если ошибка непосредственно в коде то в консоль выведентся ошибка и дальше код выполняться не будет
+console.log('Начало кода...')
+try {
+//пробуем выполнить код, пишем тут потенциально проблемную часть кода
+} catch (error) {
+// тут пишем код который выполняется в случае возникновения ошибки
+}
+console.log('Конец кода...')
+
+//обьект ошибки error в catch -- содержит свойства name, message и stack
+console.log('full error:', error)
+console.log('name of error:', error.name)
+console.log('message of error:', error.message)
+console.log('stack', error.stack) 
+
+//throw -- генерация кастомной ошибки, класс error
+try {
+    const userJSON = `{
+    "age": 28
+    }`
+    const userthrow = JSON.parse(userJSON)
+    const {name, age} = userthrow
 
 
+if(!name) {
+    throw 'Имя не заполнено' //создали кастомную ошибку, пробросили ошибку
+}
+
+console.log(`Привет, ${name}! Твой возраст - ${age}, верно?`)
+} catch (error) {
+    console.log('Возникла ошибка:', error) // тут выведется то что мы пробросили через throw
+} //т е в консоли увидим Возникла ошибка: имя не заполнено!
+
+//try catch finally -- выполнится при любом раскладе, вне зависимости от того поймалась ошибка или нет
+try {
+    //пытаемся выполнить код
+} catch(error) {
+    //обрабатываем возникшую ошибку
+} finally {
+    //выполняем при любом раскладе, вне зависимости от того поймалась ошибка или нет
+}
 
 
 
